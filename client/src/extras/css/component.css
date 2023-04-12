@@ -1,0 +1,72 @@
+.swg-site-bg{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom right, rgba(0,0,0,.8), rgba(64,41,118,.8), rgba(197,170,31,.8), rgba(0,0,0,.8), rgba(0,0,0,.8), rgba(197,170,31,.8), rgba(64,41,118,.8), rgba(0,0,0,.8));
+    /*background-image: url("../imgs/swg-bg-logo.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+}
+
+.swg-text-color{
+    color: #c5aa1f;
+    font-weight: bold;
+    text-shadow: 1px 0px 4px black;
+}
+.swg-anchor-hover:hover{
+    cursor: default;
+}
+
+.swg-logo:hover{
+    cursor: pointer;
+}
+
+.swg-text-danger{
+    text-shadow: 1px 0px 4px black;
+    font-weight: bold;
+}
+
+.swg-head-color{
+    color: #402976;
+    text-shadow: 1px 0px 4px white;
+}
+
+.swg-btn-color{
+    background: #c5aa1f;
+    color: black;
+}
+
+.swg-btn-color:hover{
+    background: black;
+    color: #c5aa1f;
+}
+
+.swg-bg-nav{
+    background: linear-gradient(to right, black, #402976, #c5aa1f, #402976, black);
+}
+
+.swg-nav-text{
+    color: white;
+    font-size: 150%;
+}
+
+.swg-nav-text:hover{
+    color: #c5aa1f
+}
+
+.swg-ul-text{
+    margin:auto;
+}
+
+.swg-btn-bg{
+    background: #c5aa1f;
+}
+
+.swg-logo{
+    width: 10%;
+    height:10%;
+}
+.swg-draken-img{
+    width: 50%;
+    height: 10%;
+    box-shadow: 5px 5px 20px black;
+}
