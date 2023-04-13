@@ -12,7 +12,7 @@ import UnsubscribeSuccess from "./components/UnsubscribeSuccess";
 function App() {
     const [backendErrors,setBackendErrors] = useState([])
   return (
-    <div className="App swg-site-bg">
+    <div className="App">
         <Navbar/>
         <BrowserRouter>
             <Routes>
