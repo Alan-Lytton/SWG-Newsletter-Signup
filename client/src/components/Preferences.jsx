@@ -34,18 +34,16 @@ const Preferences = () => {
 
     return (
         <div className="APP">
-            <div className="swg-center">
-                <h1 className="swg-head-color">Email Lookup</h1>
-                <h4 className="swg-head-color">Search your email below to check if you have registered already</h4>
+            <div className="row swg-center">
+                <h1 className="swg-head-color swg-head-size">Email Lookup</h1>
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="d-flex flex-column col-12 mx-auto">
+                    <div className="mb-5 col-12 mx-auto d-flex flex-column align-items-center">
                         {
-                            // backendErrors?.message ? <p className="text-danger mt-3">Email is already in use.</p>:
                                 formik.touched.email && formik.errors.email ?
-                                    <p className="text-danger mt-3 swg-text-danger">{formik.errors.email}</p>:null
+                                    <p className="mt-3 swg-text-danger">{formik.errors.email}</p>:null
                         }
                         <input
-                            className="mt-3 mb-3"
+                            className={`mb-3 swg-input-size swg-input-format ${formik.touched.email && formik.errors.email ? "swg-danger-box":"mt-3" }`}
                             type="email"
                             id="email"
                             name="email"
@@ -54,14 +52,14 @@ const Preferences = () => {
                             onBlur={formik.handleBlur}
                             value={formik.values.email}
                         />
-                        <span className="col-12 d-flex justify-content-end">
+                        <span className="col-6 d-flex justify-content-end">
                             <input type="submit" value="Search" className="btn swg-btn-color"/>
                         </span>
                     </div>
                 </form>
                 {
                     emailFound?
-                        <div className="mt-5 col-5">
+                        <div className="mt-5 col-12">
                             <p className="swg-text-color">Your email is in our records please click the button below if you would like to update your preferences.</p>
                             <Link to={`/edit/${currentInfo.id}`} className="btn swg-btn-color">Update Preferences</Link>
                         </div>
@@ -69,7 +67,7 @@ const Preferences = () => {
                 }
                 {
                     noEmail?
-                        <div className="mt-5 col-5">
+                        <div className="mt-5 col-12">
                             <p className="swg-text-color">Your email was not found in our records please click the button below if you would like to subscribe.</p>
                             <Link to={`/subscribe`} className="btn swg-btn-color">Subscribe</Link>
                         </div>

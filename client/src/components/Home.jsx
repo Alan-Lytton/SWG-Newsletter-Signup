@@ -6,10 +6,10 @@ const Home = () => {
 
     return (
         <div className="APP">
-            <h1 className="mt-3 swg-head-color">Welcome to Sharp Wit Games</h1>
-            <div className="container-fluid d-flex mx-auto mt-5">
+            <h1 className="mt-3 swg-head-color swg-head-size">Welcome to <span className="swg-lettering">S</span>harp <span className="swg-lettering">W</span>it <span className="swg-lettering">G</span>ames</h1>
+            <div className="d-flex flex-column justify-content-center align-items-center mx-auto mt-3">
                 <img className="img-fluid swg-draken-img me-4" src={draken} alt="The World of Draken"/>
-                <span className="d-flex flex-column">
+                <span className="d-flex flex-column mt-3 col-8">
                     <p className="swg-text-color">
                         SWG was formed by a group of friends who wanted to take their gaming experience to a new level and challenge,
                         by making their own concepts come to life. We are currently working on a game built around open world

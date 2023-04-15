@@ -1,8 +1,8 @@
 body{
     background: radial-gradient(circle at 50% 50%, #000000 0%, transparent 25%),
                 radial-gradient(circle at 50% 50%, #402976 25%, transparent 50%),
-                radial-gradient(circle at 50% 50%, #c5aa1f 50%, transparent 75%),
-                radial-gradient(circle at 50% 50%, #402976 75%, transparent 100%),
+                radial-gradient(circle at 50% 50%, #c5aa1f 35%, transparent 65%),
+                radial-gradient(circle at 50% 50%, #402976 65%, transparent 100%),
                 radial-gradient(circle at 50% 50%, #000000 100%, transparent 125%);
     background-size:  400% 400%;
     animation: spiral 30s infinite linear;
@@ -34,10 +34,32 @@ body{
     height: 100vh;
 }
 
+.swg-lettering{
+    text-decoration: underline;
+    animation: blink 4s linear infinite;
+}
+
+.swg-checks{
+    transform:scale(2);
+}
+
+.swg-input-size{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.swg-input-format{
+    width: 50%;
+}
+
+.swg-text-format{
+    width: 30%;
+}
+
 .swg-text-color{
     color: #c5aa1f;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     text-shadow: 1px 0px 4px black;
 }
 .swg-anchor-hover:hover{
@@ -49,20 +71,47 @@ body{
 }
 
 .swg-text-danger{
-    text-shadow: 1px 0px 4px black;
+    background: red;
+    color: white;
     font-weight: bold;
+    margin-bottom: 1px;
+    font-size: 25px;
+    animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.swg-danger-box{
+    border: 5px solid red;
 }
 
 .swg-head-color{
-    color: #402976;
-    text-shadow: 1px 0px 4px white;
+    color: white;
+    text-shadow: 1px 5px 4px #402976;
+    font-weight: bold;
+}
+
+.swg-head-size{
+    font-size: 60px;
 }
 
 .swg-btn-color{
     background: #c5aa1f;
     color: black;
+    font-weight: bold;
+    font-size: 20px;
     box-shadow: -2px -2px 4px black ;
     transition: all 0.5s ease-in-out;
+}
+
+.swg-danger-btn{
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
 }
 
 .swg-btn-color:hover{
@@ -98,7 +147,11 @@ body{
     height:10%;
 }
 .swg-draken-img{
-    width: 50%;
+    width: 35%;
     height: 10%;
     box-shadow: 5px 5px 20px black;
+}
+
+.swg-custom-width{
+    width: 80%;
 }

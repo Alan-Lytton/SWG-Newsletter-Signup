@@ -119,14 +119,15 @@ const Edit = (props) => {
     return (
         <div className="APP">
             <div className="swg-center">
-                <h1 className="swg-head-color mb-3">Edit your email preferences below.</h1>
-                <form onSubmit={formik.handleSubmit}>
-                    <div className="d-flex flex-column mb-5 col-12 mx-auto align-items-center">
+                <h1 className="swg-head-color swg-head-size mb-3">Edit My Preferences</h1>
+                <form className="swg-custom-width" onSubmit={formik.handleSubmit}>
+                    <div className="d-flex flex-column mb-5 mx-auto align-items-center">
                         {
                             formik.touched.name && formik.errors.name ?
-                                <p className="text-danger swg-text-danger">{formik.errors.name}</p>:null
+                                <p className="swg-text-danger">{formik.errors.name}</p>:null
                         }
                         <input
+                            className={`mb-3 swg-input-size swg-text-format ${formik.touched.name && formik.errors.name ? "swg-danger-box":"mt-3"}`}
                             type="text"
                             id="name"
                             name="name"
@@ -136,12 +137,12 @@ const Edit = (props) => {
                             value={formik.values.name}
                         />
                         {
-                            backendErrors?.message ? <p className="text-danger mt-3 swg-text-danger">Email is already in use.</p>:
+                            backendErrors?.message ? <p className="mt-3 swg-text-danger">Email is already in use.</p>:
                                 formik.touched.email && formik.errors.email ?
-                                    <p className="text-danger mt-3 swg-text-danger">{formik.errors.email}</p>:null
+                                    <p className="mt-3 swg-text-danger">{formik.errors.email}</p>:null
                         }
                         <input
-                            className="mt-3 mb-3"
+                            className={`mb-3 swg-input-size swg-input-format ${backendErrors.message ? "swg-danger-box": formik.touched.email && formik.errors.email ? "swg-danger-box":"mt-3" }`}
                             type="email"
                             id="email"
                             name="email"
@@ -152,60 +153,66 @@ const Edit = (props) => {
                         />
                         {
                             formik.touched.contactPreferences && formik.errors.contactPreferences ?
-                                <p className="text-danger mt-3 swg-text-danger">{formik.errors.contactPreferences}</p>:null
+                                <p className="mt-3 swg-text-danger">{formik.errors.contactPreferences}</p>:null
                         }
-                        <span className="mt-3 mb-3 d-flex justify-content-between">
-                            <input
-                                className="mx-auto"
-                                type="checkbox"
-                                name="contactPreferences"
-                                id="betaTest"
-                                onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
-                                onBlur={formik.handleBlur}
-                                value="betaTest"
-                                checked={chosenPreferences?.betaTest ? true:false}
-                            /><label htmlFor="betaTest" className="ms-3 me-3 swg-text-color">Beta Test Opportunities</label>
-                            <input
-                                className="mx-auto"
-                                type="checkbox"
-                                name="contactPreferences"
-                                id="news"
-                                onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
-                                onBlur={formik.handleBlur}
-                                value="news"
-                                checked={chosenPreferences?.news ? true:false}
-                            /><label htmlFor="news" className="ms-3 me-3 swg-text-color">Company News</label>
-                        </span>
-                        <span className="mt-1 mb-3 d-flex justify-content-between">
-                            <input
-                                className="mx-auto"
-                                type="checkbox"
-                                name="contactPreferences"
-                                id="deals"
-                                onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
-                                onBlur={formik.handleBlur}
-                                value="deals"
-                                checked={chosenPreferences?.deals ? true:false}
-                            /><label htmlFor="deals" className="ms-3 me-3 swg-text-color">Deals and Bundles</label>
-                            <input
-                                className="mx-auto"
-                                type="checkbox"
-                                name="contactPreferences"
-                                id="gameStatus"
-                                onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
-                                onBlur={formik.handleBlur}
-                                value="gameStatus"
-                                checked={chosenPreferences?.gameStatus ? true:false}
-                            /><label htmlFor="gameStatus" className="ms-3 me-3 swg-text-color">Game Status News</label>
-                        </span>
-                        <span className="col-12 d-flex justify-content-end">
-                            <input type="submit" value="Update Preferences" className="btn swg-btn-color"/>
-                        </span>
+                        <div className={`d-flex flex-column align-items-start ${formik.touched.contactPreferences && formik.errors.contactPreferences ? "swg-danger-box ps-4 mb-3":""}`}>
+                            <div>
+                                <input
+                                    className="mx-auto swg-checks"
+                                    type="checkbox"
+                                    name="contactPreferences"
+                                    id="betaTest"
+                                    onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
+                                    onBlur={formik.handleBlur}
+                                    value="betaTest"
+                                    checked={chosenPreferences?.betaTest ? true:false}
+                                /><label htmlFor="betaTest" className="ms-3 me-3 swg-text-color">Beta Testing</label>
+                            </div>
+                            <div>
+                                <input
+                                    className="mx-auto swg-checks"
+                                    type="checkbox"
+                                    name="contactPreferences"
+                                    id="news"
+                                    onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
+                                    onBlur={formik.handleBlur}
+                                    value="news"
+                                    checked={chosenPreferences?.news ? true:false}
+                                /><label htmlFor="news" className="ms-3 me-3 swg-text-color">Company News</label>
+                            </div>
+                            <div>
+                                <input
+                                    className="mx-auto swg-checks"
+                                    type="checkbox"
+                                    name="contactPreferences"
+                                    id="deals"
+                                    onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
+                                    onBlur={formik.handleBlur}
+                                    value="deals"
+                                    checked={chosenPreferences?.deals ? true:false}
+                                /><label htmlFor="deals" className="ms-3 me-3 swg-text-color">Deals and Bundles</label>
+                            </div>
+                            <div>
+                                <input
+                                    className="mx-auto swg-checks"
+                                    type="checkbox"
+                                    name="contactPreferences"
+                                    id="gameStatus"
+                                    onChange={e=>{formik.handleChange(e); handleCheckClick(e)}}
+                                    onBlur={formik.handleBlur}
+                                    value="gameStatus"
+                                    checked={chosenPreferences?.gameStatus ? true:false}
+                                /><label htmlFor="gameStatus" className="ms-3 me-3 swg-text-color">Game Status News</label>
+                            </div>
+                        </div>
+                            <span className="mt-3 col-8 d-flex justify-content-end">
+                                <input type="submit" value="Update  Preferences" className="btn swg-btn-color"/>
+                            </span>
                     </div>
                     <span className="d-flex flex-column col-5 mx-auto justify-content-start">
-                        <span className="d-flex mb-3">
+                        <span className="d-flex mb-3 mx-auto">
                             <input
-                                className="mx-auto"
+                                className="swg-checks"
                                 type="checkbox"
                                 name="unsubscribe"
                                 id="unsubscribe"
@@ -214,7 +221,7 @@ const Edit = (props) => {
                             /><label htmlFor="unsubscribe" className="ms-3 me-3 swg-text-color">Unsubscribe?</label>
                         </span>
                         {
-                           isChecked? <button type="button" onClick={(e)=> {handleDelete(formik.values.id)}} className="btn btn-danger">Yes Unsubscribe</button>:null
+                           isChecked? <button type="button" onClick={(e)=> {handleDelete(formik.values.id)}} className="btn btn-danger swg-danger-btn">Yes Unsubscribe</button>:null
                         }
                     </span>
                 </form>
