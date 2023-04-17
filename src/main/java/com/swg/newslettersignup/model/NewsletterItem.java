@@ -1,7 +1,6 @@
 package com.swg.newslettersignup.model;
 
 
-import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;

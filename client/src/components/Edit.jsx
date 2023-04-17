@@ -54,6 +54,8 @@ const Edit = (props) => {
         }
     },[editDataRes])
 
+    // This block of code is non functional. Keeping code as a reminder of how to fix the issue.
+
     // const setChecked = ()=>{
     //     let tempArr = editDataRes?.contactPreferences;
     //     for(let i = 0;i<tempArr.length;i++){
@@ -71,6 +73,8 @@ const Edit = (props) => {
     //         }
     //     }
     // }
+
+    // Code block below is the resolution to the code block above.
 
     const setChecked = ()=>{
         let tempArr = editDataRes?.contactPreferences;
